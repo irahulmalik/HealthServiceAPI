@@ -30,7 +30,7 @@ export class DataService {
 
     // return false if user not authenticated 
 
-    return;
+    return true;
   }
 
   getAuthStatus(): Observable<boolean> {

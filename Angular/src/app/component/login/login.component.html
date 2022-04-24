@@ -5,7 +5,7 @@
       <h2 >LOGIN</h2>
     </div>
     <div class="login-form-wrapper" >
-      <form class="ro-form">
+      <form class="ro-form" #loginForm="ngForm">
         <div class="form-group">
           <label class="labelHead" for="username">
             <b>Username</b>
@@ -54,9 +54,9 @@
         <div class="col-sm-12 clmn12">
           <!-- disable button if form not valid -->
           <!-- call doLogin method when clicking on this button-->
-          <button id="loginBtn" class="login-btn" type="submit" >Login</button>
+          <button id="loginBtn" class="login-btn" type="submit" [[disabled]="loginForm.form.invalid" (click)="doLogin()">Login</button>
           <!-- call signUp method when clicking on this button-->
-          <button id="signupBtn" class="guest-btn">Sign up</button>
+          <button id="signupBtn" class="guest-btn" (click)="signUp()">Sign up</button>
         </div>
       </form>
     </div>

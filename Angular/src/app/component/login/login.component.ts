@@ -44,10 +44,19 @@ export class LoginComponent implements OnInit {
 		// if success, redirect to profile page
 		// else display appropriate error message
 		   // reset the form
+		this.dataService.authenticateUser(this.loginForm.get('userName').value, this.loginForm.get('password').value).subscribe(val => {
+			if(val == true){
+				this.route.navigateByUrl('/profile');
+			}
+			else{
+				this.loginForm.reset();
+			}
+		})
 	}
 
 	signUp() {
 		// should navigate to register new user page
+		this.route.navigateByUrl('/register_user');
 	}
 
 }
